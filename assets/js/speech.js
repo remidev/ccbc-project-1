@@ -13,7 +13,7 @@ if (!("webkitSpeechRecognition" in window)) {
   recognition.interimResults = true;
 
   //handles the recording start event
-  recognition.onstart = function() {
+  recognition.onstart = function () {
     recognizing = true;
     // showInfo("info_speak_now");
     //switch the start button microphone to the animated gif
@@ -21,7 +21,7 @@ if (!("webkitSpeechRecognition" in window)) {
   };
 
   //handles the recording error event
-  recognition.onerror = function(event) {
+  recognition.onerror = function (event) {
     if (event.error == "no-speech") {
       $(".micImg").attr("src", "./assets/images/mic_static.png");
       showInfo("info_no_speech");
@@ -43,7 +43,7 @@ if (!("webkitSpeechRecognition" in window)) {
   };
 
   //handles the end of recording event
-  recognition.onend = function() {
+  recognition.onend = function () {
     recognizing = false;
     if (ignore_onend) {
       return;
@@ -56,19 +56,20 @@ if (!("webkitSpeechRecognition" in window)) {
   };
 
   //handles how to parse the result
-  recognition.onresult = function(event) {
+  recognition.onresult = function (event) {
     // CALL THE API FUNCTION WITH THE EVENT.RESULTS.TRANSCRIPT AS PARAMETER
 
     // console.log(event.results);
     console.log(event.results[0]);
     if (event.results[0].isFinal) {
       final_transcript += event.results[0][0].transcript;
+      //call the emotion API using the recorded text
+      getEmotion(final_transcript)
     }
-    $(".result").html(final_transcript);
   };
 }
 
-$(".speechBtn").on("click", function() {
+$(".speechBtn").on("click", function () {
   startButton();
 });
 
