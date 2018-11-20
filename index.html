@@ -4,83 +4,118 @@
 
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mmpathy</title>
+
+    <!-- Linking BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Linking Reset CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <!-- Linking CSS-->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Linking P5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/p5.sound.min.js"></script>
+
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/Particle.js"></script>
+    <script defer src="assets/js/style.js"></script>
+    <script defer src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script defer src="assets/js/speech.js"></script>
+    <script defer src="assets/js/emotion.js"></script>
+  <script defer src="assets/js/video.js"></script>
+
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  </head>
+  
   <title>Mmpathy</title>
 
-  <!-- Linking BootStrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <!-- Linking Reset CSS -->
-  <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
-  <!-- Linking CSS-->
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-    crossorigin="anonymous">
-
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script defer src='https://code.responsivevoice.org/responsivevoice.js'></script>
-  <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/style.js"></script>
-  <script defer src="assets/js/speech.js"></script>
-  <script defer src="assets/js/emotion.js"></script>
-  <script defer src="assets/js/video.js"></script>
-
-
-
-</head>
 
 <body>
-  <div class="container-fluid">
+ <body>
+    <div class="container-fluid">
 
-    <div id="openingPage">
-      <!-- Do Not Touch -->
-    </div>
-
-    <!--TOP 80% of the page -->
-    <div class="row" id="rowTop">
-      <div id="LogoContainer">
-        <img class="img-fluid" id="main-ball" src="assets/images/Ball.jpg" alt="LogoImage">
-      </div>
-    </div>
-
-    <!--BOT 20% of the page -->
-    <div class="row" id="rowBot">
-
-
-      <div class="col-4" id="DropUp">
-        <div class="dropup">
-          <img class="little-balls menuImg img-fluid" src="assets/images/Hamburger.png" alt="Nav Button">
-          <div class="dropup-content">
-            <a href="#" id="happy"><i class="far fa-smile-beam"></i></a>
-            <a href="#"><i class="far fa-frown"></i></a>
-            <a href="#"><i class="fas fa-dumbbell"></i></a>
-          </div>
+        <div id="openingPage">
+            <button type="button">Welcome to M'pathy</button>
         </div>
-      </div>
 
 
-      <div class="col-4" id="Play">
-        <img class="little-balls playImg img-fluid" id="playButton" src="assets/images/Play10.png" alt="Nav Button">
-      </div>
+        <!--TOP 80% of the page -->
+        <div class="row" id="rowTop">
+            <div id="LogoContainer">
+                <!-- <img class="img-fluid" id="main-ball" src="assets/images/Ball.jpg" alt="LogoImage"> -->
+
+            </div>
+            <div class="col-4" id="DropUp">
+                <div class="dropup">
+                    <img class="little-balls menuImg img-fluid" src="assets/images/Hamburger.png" alt="Nav Button">
+                    <div class="dropup-content">
+                        <a href="#"><i class="far fa-smile-beam"></i></a>
+                        <a href="#"><i class="far fa-frown"></i></a>
+                        <a href="#"><i class="fas fa-running"></i></a>
+                        <a href="#"><i class="fas fa-glasses"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
 
 
-      <div class="col-4 speechBtn" id="Mike">
-        <img class="little-balls micImg img-fluid" src="assets/images/mic_static.png" alt="Nav Button">
-        </button>
-      </div>
+            <div class="col-4" id="Play">
+                <img class="little-balls playImg img-fluid" src="assets/images/Play10.png" alt="Nav Button">
+            </div>
+
+
+            <div class="col-4 speechBtn" id="Mike">
+                <img class="little-balls micImg img-fluid" src="assets/images/TestMike4.png" alt="Nav Button">
+               
+            </div>
+
+        </div>
+
+
+        <!--BOT 20% of the page -->
+        <!-- <div class="row" id="rowBot"> -->
+
+
+            <!-- <div class="col-4" id="DropUp">
+                <div class="dropup">
+                    <img class="little-balls menuImg img-fluid" src="assets/images/Hamburger.png" alt="Nav Button">
+                    <div class="dropup-content">
+                        <a href="#"><i class="far fa-smile-beam"></i></a>
+                        <a href="#"><i class="far fa-frown"></i></a>
+                        <a href="#"><i class="fas fa-dumbbell"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4" id="Play">
+                <img class="little-balls playImg img-fluid" src="assets/images/Play10.png" alt="Nav Button">
+            </div>
+
+
+            <div class="col-4 speechBtn" id="Mike">
+                <img class="little-balls micImg img-fluid" src="assets/images/mic_static.png" alt="Nav Button">
+               
+            </div> -->
+
+        <!-- </div> -->
+
 
     </div>
-
-
-  </div>
-
-  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-  <div id="player"></div>
-
 </body>
 
+</html>
 </html>

@@ -1,10 +1,11 @@
-/* .openingPage{
+.openingPage{
     height: 100vh;
     width: 100vw;
-} */
+    background-color: black;
+}
 .container-fluid{
 /* Background Image for the Page  */
-    background-image: url(https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif);
+    /* background-image: url(https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif); */
 }
 
 #rowTop{
@@ -34,23 +35,29 @@ border-radius: 50%;
 
 .little-balls{
 /* Images */
+
+border: 2px solid #d49336;
+border-radius: 50%;
+
 border: 5px solid white;
 border-radius:50%;
+
 width: 125px;
 background-color:"transparent"; 
 }
 
 .menuImg{
 /* Specifically DropDownMenu Image */
-    background-color: lightblue;
+    background-color: #966b4c;
 }
 
 .playImg{
 /* Specifically Play Image */
-    background-color: #2258a3;
+    background-color: #966b4c;
 }
 
 .micImg{
+    background-color: #966b4c;
 /* Specifically mic Image */
 /* Background Color transparent does not work needs to be photo edited */
 /* Has Natural fill in color because the image is not transparent*/
