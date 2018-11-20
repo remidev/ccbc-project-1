@@ -6,7 +6,7 @@ function getEmotion(inputStr) {
     $.post(
         queryURL,
         JSON.stringify({
-            api_key: "",
+            api_key: "c5c34def9818712f9e2e69d42dd85f63",
             data: inputStr,
             //only return values more than 0.1
             threshold: 0.1

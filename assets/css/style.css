@@ -35,8 +35,13 @@ border-radius: 50%;
 
 .little-balls{
 /* Images */
+
 border: 2px solid #d49336;
 border-radius: 50%;
+
+border: 5px solid white;
+border-radius:50%;
+
 width: 125px;
 background-color:"transparent"; 
 }
