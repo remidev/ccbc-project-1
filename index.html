@@ -19,7 +19,13 @@
         crossorigin="anonymous">
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Linking P5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/p5.sound.min.js"></script>
+
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/Particle.js"></script>
     <script defer src="assets/js/style.js"></script>
     <script defer src="assets/js/speech.js"></script>
     <script defer src="assets/js/emotion.js"></script>
@@ -30,24 +36,48 @@
     <div class="container-fluid">
 
         <div id="openingPage">
-            <!-- Do Not Touch -->
+            <button type="button">Welcome to M'pathy</button>
         </div>
 
 
         <!--TOP 80% of the page -->
         <div class="row" id="rowTop">
             <div id="LogoContainer">
-                <img class="img-fluid" id="main-ball" src="assets/images/Ball.jpg" alt="LogoImage">
+                <!-- <img class="img-fluid" id="main-ball" src="assets/images/Ball.jpg" alt="LogoImage"> -->
 
             </div>
+            <div class="col-4" id="DropUp">
+                <div class="dropup">
+                    <img class="little-balls menuImg img-fluid" src="assets/images/Hamburger.png" alt="Nav Button">
+                    <div class="dropup-content">
+                        <a href="#"><i class="far fa-smile-beam"></i></a>
+                        <a href="#"><i class="far fa-frown"></i></a>
+                        <a href="#"><i class="fas fa-running"></i></a>
+                        <a href="#"><i class="fas fa-glasses"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4" id="Play">
+                <img class="little-balls playImg img-fluid" src="assets/images/Play10.png" alt="Nav Button">
+            </div>
+
+
+            <div class="col-4 speechBtn" id="Mike">
+                <img class="little-balls micImg img-fluid" src="assets/images/TestMike4.png" alt="Nav Button">
+               
+            </div>
+
         </div>
 
 
         <!--BOT 20% of the page -->
-        <div class="row" id="rowBot">
+        <!-- <div class="row" id="rowBot"> -->
 
 
-            <div class="col-4" id="DropUp">
+            <!-- <div class="col-4" id="DropUp">
                 <div class="dropup">
                     <img class="little-balls menuImg img-fluid" src="assets/images/Hamburger.png" alt="Nav Button">
                     <div class="dropup-content">
@@ -66,10 +96,10 @@
 
             <div class="col-4 speechBtn" id="Mike">
                 <img class="little-balls micImg img-fluid" src="assets/images/mic_static.png" alt="Nav Button">
-                </button>
-            </div>
+               
+            </div> -->
 
-        </div>
+        <!-- </div> -->
 
 
     </div>
