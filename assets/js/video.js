@@ -1,5 +1,3 @@
-var videoId = "";
-
 function videoQuery(emotion) {
 
   //Query object for URL parameters
@@ -28,21 +26,26 @@ function videoQuery(emotion) {
     url: queryURL,
     method: "GET",
 
+    //On successful query...
     success: function (response) {
 
+      //retrieve video ID from response object
       videoId = response.items[0].id.videoId;
-      player.videoId = videoId;
+      //Set Iframe video ID 
 
     },
+
+    //On unsuccessful query...
     error: function () {
 
-      console.log("API error");
+      //tell dad joke
       getDadJoke();
 
     }
   })
 }
 
+//Get dad joke, read dad joke
 function getDadJoke() {
   $.ajax({
     url: "https://icanhazdadjoke.com/",
@@ -55,8 +58,3 @@ function getDadJoke() {
     responsiveVoice.speak(response.joke)
   })
 }
-
-function getVideoId() {
-  return videoId;
-}
-
