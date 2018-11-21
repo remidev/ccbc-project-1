@@ -13,6 +13,14 @@
 height: 80vh;
 }
 
+#Logo{
+    position: absolute;
+    right: 37%;
+    bottom: 35%;
+    height: 450px;
+    width: 450px;
+}
+
 #rowBot{
  /* Bottom 20% of the Page */
     height: 20vh;

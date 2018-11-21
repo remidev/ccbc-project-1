@@ -1,55 +1,5 @@
 var globalVideoId = "BsY0Tazygqk";
 
-//Function to query youtube api, search for video with query "emotion + music"
-function videoQuery(emotion) {
-
-  //Query object for URL parameters
-  query = {
-
-    part: "snippet",
-    q: emotion + " music",
-    maxResults: "1",
-    safeSearch: "strict",
-    videoEmbeddable: "true",
-    videoLicense: "creativeCommon",
-    relevanceLanguage: "en",
-    type: "video",
-    key: "AIzaSyB5hLDO-1T6eCCn1sA7zwJmq-wWwpRVzrw"
-  }
-
-  var baseURL = "https://www.googleapis.com/youtube/v3/search?";
-
-  //Append parameters to base URL
-  var queryURL = baseURL + jQuery.param(query);
-
-  //Log query URL
-  console.log("Query URL: " + queryURL);
-
-  //ajax GET request 
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-
-    //On successful query...
-    success: function (response) {
-
-      //retrieve video ID from response object
-      globalVideoId = response.items[0].id.videoId;
-      //find a way to update player videoId
-      // call some function declared below the player object?
-
-    },
-
-    //On unsuccessful query...
-    error: function () {
-
-      //tell dad joke
-      getDadJoke();
-
-    }
-  });
-}
-
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
@@ -62,64 +12,178 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
-  console.log("video id @ player creation: ", toString(globalVideoId))
-  player = new YT.Player('player', {
-    height: '400',
-    width: '400',
-    videoId: "BsY0Tazygqk",
-    paused: "true",
-    events: {
-      'onReady': onPlayerReady,
-    }
-  });
+ console.log("video id @ player creation: ", toString(globalVideoId))
+ player = new YT.Player('player', {
+   height: '0',
+   width: '0',
+   videoId: "iXIDtf1wP0g&start_radio=1&list=RDiXIDtf1wP0g",
+   paused: "false",
+   events: {
+     'onReady': onPlayerReady,
+   }
+ });
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady() {
-  console.log("Video Ready");
+ console.log("Video Ready");
+}
+
+//Function to query youtube api, search for video with query "emotion + music"
+function videoQuery(emotion) {
+
+ //Query object for URL parameters
+ query = {
+
+   part: "snippet",
+   q: emotion + " music",
+   maxResults: "1",
+   safeSearch: "strict",
+   videoEmbeddable: "true",
+   videoLicense: "creativeCommon",
+   relevanceLanguage: "en",
+   type: "video",
+   key: "AIzaSyB5hLDO-1T6eCCn1sA7zwJmq-wWwpRVzrw"
+ }
+
+ var baseURL = "https://www.googleapis.com/youtube/v3/search?";
+
+ //Append parameters to base URL
+ var queryURL = baseURL + jQuery.param(query);
+
+ //Log query URL
+ console.log("Query URL: " + queryURL);
+
+ //ajax GET request
+ $.ajax({
+   url: queryURL,
+   method: "GET",
+
+   //On successful query...
+   success: function (response) {
+
+     //retrieve video ID from response object
+     globalVideoId = response.items[0].id.videoId;
+     player.loadVideoById(globalVideoId);
+
+     //find a way to update player videoId
+     // call some function declared below the player object?
+
+   },
+
+   //On unsuccessful query...
+   error: function () {
+
+     //tell dad joke
+     getDadJoke();
+
+   }
+ });
 }
 
 
 
+// function getPlayerState() {
+//   player.getPlayerState();
+// }
 
-//Play / Pause button behavior 
-document.getElementById('playButton').onclick = function fun(playerStatus) {
-  // playerStatus attribute of player, -1 = not started,  1 = playing, 2 = paused.
+// function pauseVideo() {
+//   player.pauseVideo();
+// }
 
-  // if player status is -1(not started) or 2 (paused), play the video
-  if (playerStatus == 2 || -1) {
+// function playVideo() {
+//   player.playVideo();
+// }
 
-    player.playVideo();
-    console.log("Playing Video");
+//Play / Pause button behavior
+document.getElementById('Play').onclick = function fun() {
 
-    // otherwise if player is already playing, pause it. 
-  } else if (playerStatus == 1) {
+ console.log(player.getPlayerState());
 
-    player.pauseVideo();
-    console.log("Paused Video");
+ state = player.getPlayerState();
 
-  }
+ if (state == 1){
+  $(".playImg").attr("src", "./assets/images/Play10.png");      
+   player.pauseVideo();
+   console.log("Pause");
+
+ } else if (state == 2) {
+  $(".playImg").attr("src", "./assets/images/PauseButt.png"); 
+   player.playVideo();
+   console.log("Play");
+
+ }
+
+
+ // if (state === 1) {
+ //   pauseVideo();
+ // } else {
+ //   playVideo();
+ // }
+
+
+ // player.pauseVideo();
+ // console.log(player.getPlayerState());
+
+ // console.log("player.paused: ",player.paused);
+ // if (player.paused == true) {
+
+ //   player.playVideo();
+ //   player.paused = false;
+ //   console.log("Player.pause: ", player.pause)
+ //   console.log("Playing Video");
+
+ //   // otherwise if player is already playing, pause it.
+ // } else if (player.paused == false) {
+
+ //   player.pauseVideo();
+ //   player.paused = true;
+ //   console.log("Player.pause: ", player.pause)
+ //   console.log("Paused Video");
+
+ // }
 }
 
 
 //Click Behavior for happy emoji
 document.getElementById('happy').onclick = function fun() {
 
-  videoQuery("happy");
+ videoQuery("happy");
 
 }
 
+document.getElementById('frown').onclick = function fun() {
+
+ videoQuery("sad");
+
+}
+document.getElementById('running').onclick = function fun() {
+
+  videoQuery("workout");
+ 
+ }
+ document.getElementById('glasses').onclick = function fun() {
+
+  videoQuery("study");
+ 
+ }
+
+ document.getElementById('sample').onclick = function fun() {
+
+  videoQuery("Mako - Beam (Original) [Free]");
+ //https://www.youtube.com/watch?v=YrvlVLLabro&list=RDYrvlVLLabro&start_radio=1
+ }
 
 //Get dad joke, backup functionality if API Key Burns
 function getDadJoke() {
-  $.ajax({
-    url: "https://icanhazdadjoke.com/",
-    type: "GET",
-    headers: {
-      Accept: 'application/json'
-    },
-  }).then(function (response) {
-    console.log(response);
-    responsiveVoice.speak(response.joke)
-  })
+ $.ajax({
+   url: "https://icanhazdadjoke.com/",
+   type: "GET",
+   headers: {
+     Accept: 'application/json'
+   },
+ }).then(function (response) {
+   console.log(response);
+   responsiveVoice.speak(response.joke)
+ })
 }

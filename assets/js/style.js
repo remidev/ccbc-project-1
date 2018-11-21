@@ -4,27 +4,26 @@ var bg;
 var snow = [];
 var gravity;
 
-$("#openingPage").on("click", function(){
-
-});
-
 $("#Play").on("click", function () {
     toggleSong();
 });
 
+
 function toggleSong() {
     if (song.isPlaying()) {
         song.pause();
+        $(".playImg").attr("src", "./assets/images/Play10.png");      
     } else {
+        $(".playImg").attr("src", "./assets/images/PauseButt.png"); 
         song.play();
     }
 }
 
 function preload() {
-    // song = loadSound('assets/js/beat.mp3');
-    song = loadSound('assets/js/Tremor.mp3'); //past in song here
+    // song = loadSound('')
+    // song = loadSound('assets/js/Beam.mp3');
+    // song = loadSound('assets/js/Tremor.mp3'); //past in song here
 }
-
 
 function setup() {
     bg = loadImage("assets/js/GoldenTime.jpg");
@@ -38,8 +37,12 @@ function setup() {
     }
    
     angleMode(DEGREES);
-    song.play();
+    // song.play();
+    // fft = new p5.FFT(.2, 512);
+    mic = new p5.AudioIn();
+    mic.start();
     fft = new p5.FFT(.2, 512);
+    fft.setInput(mic);
 }
 
 function draw() {
