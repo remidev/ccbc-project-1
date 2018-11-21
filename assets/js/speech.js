@@ -44,7 +44,7 @@ if (!("webkitSpeechRecognition" in window)) {
     if (ignore_onend) {
       return;
     }
-    $(".micImg").attr("src", "./assets/images/mic_static.png");
+    $(".micImg").attr("src", "./assets/images/TestMike4.png");
     if (!final_transcript) {
       //   showInfo("info_start");
       return;
