@@ -1,6 +1,6 @@
 function getRandomSize() {
- let r = randomGaussian()*2.5;
- return constrain(abs(r*r),2,6);
+    let r = randomGaussian() * 2.5;
+    return constrain(abs(r * r), 2, 8);
     // while (true) {
     //     var r1 = random(1);
     //     var r2 = random(2);
@@ -14,8 +14,8 @@ function getRandomSize() {
 class Snowflake {
 
     constructor(sa, sb) {
-        let a = sa||random(width);
-        let b = sb||random(-100, -10);
+        let a = sa || random(width);
+        let b = sb || random(-100, -10);
 
         this.pos = createVector(a, b);
         this.vel = createVector(0, 0);
@@ -30,7 +30,7 @@ class Snowflake {
         this.acc.add(force);
     }
 
-    randomize(){
+    randomize() {
         let a = random(width);
         let b = random(-100, -10);
 
@@ -45,20 +45,20 @@ class Snowflake {
         this.vel.add(this.acc);
         this.vel.limit(this.r * 0.2); //vector function limiting length
 
-        if (this.vel.mag()<1){
+        if (this.vel.mag() < 1) {
             this.vel.normalize();
         }
 
         this.pos.add(this.vel);
         this.acc.mult(0);
-        
-        if(this.pos.y > height + this.r){
+
+        if (this.pos.y > height + this.r) {
             this.randomize();
         }
     }
 
     render() {
-        
+
         // rotate(this.angle);
         stroke(255);
         strokeWeight(this.r);

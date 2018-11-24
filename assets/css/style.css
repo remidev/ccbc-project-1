@@ -4,10 +4,14 @@
     background-color: black;
 }
 .container-fluid{
+
 /* Background Image for the Page  */
     /* background-image: url(https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif); */
 }
-
+#defaultCanvas0.p5Canvas{
+    justify-content: center;
+    align-items: center; 
+}
 #rowTop{
 /* Top 80% of the Page */
 height: 80vh;
@@ -15,10 +19,11 @@ height: 80vh;
 
 #Logo{
     position: absolute;
-    right: 37%;
+    /* right: 37%;
     bottom: 35%;
     height: 450px;
-    width: 450px;
+    width: 450px; */ 
+    
 }
 
 #rowBot{
