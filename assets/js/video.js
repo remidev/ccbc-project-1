@@ -146,9 +146,14 @@ document.getElementById('Play').onclick = function fun() {
 
 
 //Click Behavior for happy emoji
-document.getElementById('happy').onclick = function fun() {
+
+document.getElementById('dadJoke').onclick = function fun() {
   getDadJoke();
-  // videoQuery("happy");
+
+}
+document.getElementById('happy').onclick = function fun() {
+  // getDadJoke();
+  videoQuery("happy");
 
 }
 

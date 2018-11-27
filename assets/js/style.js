@@ -20,20 +20,16 @@ function toggleSong() {
 }
 
 function preload() {
-    song = loadSound('assets/js/TestSong.mp3');
-    // song = loadSound('assets/js/Tremor.mp3'); //past in song here
+    // song = loadSound('assets/audio-files/TestSong.mp3');
+   
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight+194);
-
-    // if (canvas < createCanvas(650,850)){
-    //     //Resize Line
-    // }
 }
 
 function setup() {
-    bg = loadImage("assets/js/Anime.jpg");
+    bg = loadImage("assets/images/background-images/Anime.jpg");
     var canvas = createCanvas(windowWidth, windowHeight+194);
     // var canvas = createCanvas(1920, 1180);
     canvas.parent('LogoContainer');
@@ -47,13 +43,13 @@ function setup() {
 
     angleMode(DEGREES);
 
-      song.play();
-      fft = new p5.FFT(.2, 512);
+    //   song.play();
+    //   fft = new p5.FFT(.2, 512);
 
-    // mic = new p5.AudioIn();
-    // mic.start();
-    // fft = new p5.FFT(.2, 512);
-    // fft.setInput(mic);
+    mic = new p5.AudioIn();
+    mic.start();
+    fft = new p5.FFT(.2, 512);
+    fft.setInput(mic);
 }
 
 function draw() {
