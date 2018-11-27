@@ -17,5 +17,6 @@ function getEmotion(inputStr) {
         //return the name of the key with the highest value
         let x = Object.keys(obj).reduce((a, b) => (obj[a] > obj[b] ? a : b));
         console.log(x);
+        videoQuery(x)
     });
 }
