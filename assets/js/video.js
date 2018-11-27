@@ -63,7 +63,7 @@ function videoQuery(emotion) {
     success: function (response) {
 
       //retrieve video ID from response object
-      globalVideoId = response.items[0].id.videoId;
+      globalVideoId = getRandomVideo(response.items)
       player.loadVideoById(globalVideoId);
 
       //find a way to update player videoId
@@ -81,7 +81,9 @@ function videoQuery(emotion) {
   });
 }
 
-
+function getRandomVideo(arr){
+  return arr[Math.floor(Math.random() * arr.length)].id.videoId
+}
 
 // function getPlayerState() {
 //   player.getPlayerState();
