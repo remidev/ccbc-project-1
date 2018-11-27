@@ -37,7 +37,7 @@ function videoQuery(emotion) {
 
     part: "snippet",
     q: emotion + " music",
-    maxResults: "1",
+    maxResults: "1000",
     safeSearch: "strict",
     videoEmbeddable: "true",
     videoLicense: "creativeCommon",
