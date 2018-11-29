@@ -1,27 +1,22 @@
-Columbia Coding BootCamp Project One
 
-Project Title:
+   <h1><em>M-Pathy</em><h1>
+<hr>
 
-   M-Pathy
+<h3>Synopsis</h3>
+  <p>A web based music playing and visualizer application that selects music based on user's mood, determined via either a parsing of user speech input or by which mood button the user presses. In addition, the music amplitude and volume is matched with a sound wave visualizer using p5.js FFT<p>
 
-Project Description:
+<h3>Motivation</h3>
+<p></p>
 
-  A web based music playing and visualizer application that selects music based on user's mood, determined via either a parsing of user speech input or by which mood button the user presses.
-
-Project Contributors:
+<h2>Project Contributors:<h2>
 
   - Anup Ramdass
   - Kevin Zhang
   - Lance Pu
   - Theodore Newman
 
-  Additionally: 
-  
-  The instructors and TA's of CCBC
 
-    -Thanks for all your help :^)
-
-API's Used:
+<h2>API's Used:<h2>
 
   Dad Joke API:
   - https://icanhazdadjoke.com/
@@ -29,10 +24,16 @@ API's Used:
   Emotion Parsing API:
   - https://apiv2.indico.io/emotion
 
-  Processing 5 Sound:
+  Processing Sound into Visuals:
   - https://p5js.org/reference/#/libraries/p5.sound
+  - https://p5js.org/reference/#/libraries/p5.sound
+  
 
   YouTube IFrame and Data API's:
   - https://www.youtube.com/iframe_api
   - https://www.googleapis.com/youtube/v3/
+
+
+<h2>Acknowledgments<h2>
+
 
