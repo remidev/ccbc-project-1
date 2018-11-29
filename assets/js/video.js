@@ -45,13 +45,13 @@ function videoQuery(emotion) {
 
     part: "snippet",
     q: emotion + " music",
-    maxResults: "1000",
+    maxResults: "25",
     safeSearch: "strict",
     videoEmbeddable: "true",
     videoLicense: "creativeCommon",
     relevanceLanguage: "en",
     type: "video",
-    key: "AIzaSyB5hLDO-1T6eCCn1sA7zwJmq-wWwpRVzrw"
+    key: "AIzaSyDZi-WMgT8K4Us0DPl3l_9DKV4i3sR37rQ"
 
   }
 
